@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Guides - Hard F Cafe RBG Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h1>Hard F Cafe</h1>
+                <span>RBG R1 Guide</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="cc-chains.html" class="nav-link">CC Chains</a></li>
+                <li><a href="progression.html" class="nav-link active">Class Guides</a></li>
+                <li><a href="r1-behaviors.html" class="nav-link">R1 Behaviors</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <div class="container">
+                <a href="index.html">Home</a> > <span>Class Guides</span>
+            </div>
+        </div>
+
+        <!-- Class Navigation Section -->
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">Class Guides</h1>
+                <p class="page-subtitle">Choose your class to view detailed progression guides and R1 strategies</p>
+                
+                <!-- Search and Filter -->
+                <div class="class-filters">
+                    <div class="search-box">
+                        <input type="text" id="classSearch" placeholder="Search classes..." class="search-input">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Classes</button>
+                        <button class="filter-btn" data-filter="casters">Casters</button>
+                        <button class="filter-btn" data-filter="healers">Healers</button>
+                        <button class="filter-btn" data-filter="melee">Melee</button>
+                        <button class="filter-btn" data-filter="hunters-tanks">Hunters & Tanks</button>
+                    </div>
+                </div>
+                
+                <!-- Class Grid -->
+                <div class="class-navigation-grid">
+                    <!-- Casters -->
+                    <div class="class-category" data-category="casters">
+                        <h2 class="category-title">Casters</h2>
+                        <div class="class-cards">
+                            <a href="classes/frost-mage.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">❄️</div>
+                                    <h3>Frost Mage</h3>
+                                    <p>CC master with Poly chains and burst combos</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/affliction-warlock.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🔥</div>
+                                    <h3>Affliction Warlock</h3>
+                                    <p>DoT pressure and Fear chain specialist</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/destruction-warlock.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">💀</div>
+                                    <h3>Destruction Warlock</h3>
+                                    <p>Chaos Bolt burst and Shadowfury setups</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/balance-druid.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🌙</div>
+                                    <h3>Balance Druid</h3>
+                                    <p>Beam + Vortex combos and off-healing</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/shadow-priest.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">👻</div>
+                                    <h3>Shadow Priest</h3>
+                                    <p>Mass Dispel and Fear + MD chains</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/elemental-shaman.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">⚡</div>
+                                    <h3>Elemental Shaman</h3>
+                                    <p>Purge trains and Hex + Ascendance burst</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Healers -->
+                    <div class="class-category" data-category="healers">
+                        <h2 class="category-title">Healers</h2>
+                        <div class="class-cards">
+                            <a href="classes/holy-paladin.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">⛑️</div>
+                                    <h3>Holy Paladin</h3>
+                                    <p>Defensive CD caller and utility master</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/holy-priest.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">✨</div>
+                                    <h3>Holy Priest</h3>
+                                    <p>Mass Dispel and Guardian Spirit clutch</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/resto-druid.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🌿</div>
+                                    <h3>Resto Druid</h3>
+                                    <p>Cyclone engine and off-healer CC bot</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/mistweaver-monk.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🧘</div>
+                                    <h3>Mistweaver Monk</h3>
+                                    <p>Transcendence mastery and Ring of Peace</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/resto-shaman.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🌊</div>
+                                    <h3>Resto Shaman</h3>
+                                    <p>Totem rotation and Purge + Hex chains</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Melee -->
+                    <div class="class-category" data-category="melee">
+                        <h2 class="category-title">Melee</h2>
+                        <div class="class-cards">
+                            <a href="classes/arms-warrior.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">⚔️</div>
+                                    <h3>Arms Warrior</h3>
+                                    <p>MS uptime and Banner coordination</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/unholy-dk.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">💀</div>
+                                    <h3>Unholy Death Knight</h3>
+                                    <p>Gorefiend setups and AMZ anchor</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/feral-druid.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🐾</div>
+                                    <h3>Feral Druid</h3>
+                                    <p>Bleed anchor and Bash + Cyclone setups</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/subtlety-rogue.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🗡️</div>
+                                    <h3>Subtlety Rogue</h3>
+                                    <p>Sap play and Smoke Bomb mastery</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/retribution-paladin.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-card">
+                                        <div class="class-icon">⚡</div>
+                                        <h3>Retribution Paladin</h3>
+                                        <p>Utility anchor and HoJ chains</p>
+                                        <div class="class-rating">1300-2600 R1</div>
+                                    </div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/windwalker-monk.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🥋</div>
+                                    <h3>Windwalker Monk</h3>
+                                    <p>Ring of Peace and FoF kill anchor</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Hunters & Tanks -->
+                    <div class="class-category" data-category="hunters-tanks">
+                        <h2 class="category-title">Hunters & Tanks</h2>
+                        <div class="class-cards">
+                            <a href="classes/survival-hunter.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🏹</div>
+                                    <h3>Survival Hunter</h3>
+                                    <p>Trap play and Roar of Sacrifice</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/beast-mastery-hunter.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🐺</div>
+                                    <h3>Beast Mastery Hunter</h3>
+                                    <p>Pet utility and burst discipline</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/guardian-druid.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🛡️</div>
+                                    <h3>Guardian Druid</h3>
+                                    <p>Flag carrier and peel synergy</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                            
+                            <a href="classes/protection-paladin.html" class="class-card-link">
+                                <div class="class-card">
+                                    <div class="class-icon">🛡️</div>
+                                    <h3>Protection Paladin</h3>
+                                    <p>Utility tank and defensive caller</p>
+                                    <div class="class-rating">1300-2600 R1</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Hard F Cafe - RBG R1 Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
