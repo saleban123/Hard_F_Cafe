@@ -259,9 +259,12 @@
         }
 
         // Rating tier mapping
-        function getRatingTier(rating) {
+        function getRatingTier(rating, memberName) {
+            // Only players with actual R1 skill get R1 title
+            const r1Players = ['Holygiga', 'Tmremaru', 'Wayoflife', 'Remulock', 'Trågédy', 'Whisperbest'];
+            if (r1Players.includes(memberName)) return 'R1';
+            
             if (!rating) return 'Unrated';
-            if (rating >= 2200) return 'R1';
             if (rating >= 2000) return 'High';
             if (rating >= 1700) return 'Mid';
             return 'Low';
@@ -269,9 +272,12 @@
 
         // Create member card HTML
         function createMemberCard(member) {
-            const ratingTier = getRatingTier(member.rating);
+            const ratingTier = getRatingTier(member.rating, member.name);
             const ratingColor = getRatingColor(member.rating);
             const classIcon = classIcons[member.class] || '❓';
+            
+            // Check if this is an alt character (excluding Holygiga which is main)
+            const isAlt = ['Tmremaru', 'Remulock', 'Wayoflife'].includes(member.name);
             
             return `
                 <a href="${member.profileUrl}" target="_blank" rel="noopener noreferrer" class="member-card-link">
@@ -279,7 +285,7 @@
                         <div class="member-header">
                             <div class="member-icon">${classIcon}</div>
                             <div class="member-info">
-                                <h3 class="member-name">${member.name}</h3>
+                                <h3 class="member-name">${member.name} ${isAlt ? '<span class="alt-badge">ALT</span>' : ''}</h3>
                                 <p class="member-class">${member.class || 'Unknown Class'}</p>
                             </div>
                             <div class="member-level">Lv.${member.level}</div>
@@ -328,10 +334,12 @@
             
             switch (filter) {
                 case 'r1':
-                    filteredMembers = validMembers.filter(m => m.rating && m.rating >= 2200);
+                    // R1 players are those with actual R1 skill, not just high rating
+                    const r1Players = ['Holygiga', 'Tmremaru', 'Wayoflife', 'Remulock', 'Trågédy', 'Whisperbest'];
+                    filteredMembers = validMembers.filter(m => r1Players.includes(m.name));
                     break;
                 case 'high':
-                    filteredMembers = validMembers.filter(m => m.rating && m.rating >= 2000 && m.rating < 2200);
+                    filteredMembers = validMembers.filter(m => m.rating && m.rating >= 2000);
                     break;
                 case 'mid':
                     filteredMembers = validMembers.filter(m => m.rating && m.rating >= 1700 && m.rating < 2000);
@@ -384,11 +392,19 @@
         // Update statistics
         function updateStats() {
             const totalMembers = validMembers.length;
+            
+            // Calculate average rating from top 10 rated players only
             const membersWithRating = validMembers.filter(m => m.rating);
-            const avgRating = membersWithRating.length > 0 
-                ? Math.round(membersWithRating.reduce((sum, m) => sum + m.rating, 0) / membersWithRating.length)
+            const top10Members = membersWithRating
+                .sort((a, b) => b.rating - a.rating)
+                .slice(0, 10);
+            const avgRating = top10Members.length > 0 
+                ? Math.round(top10Members.reduce((sum, m) => sum + m.rating, 0) / top10Members.length)
                 : 0;
-            const r1Members = validMembers.filter(m => m.rating && m.rating >= 2200).length;
+            
+            // R1 count excluding alts (only main characters with R1 skill)
+            const r1MainPlayers = ['Holygiga', 'Trågédy', 'Whisperbest'];
+            const r1Members = validMembers.filter(m => r1MainPlayers.includes(m.name)).length;
             
             document.getElementById('totalMembers').textContent = totalMembers;
             document.getElementById('avgRating').textContent = avgRating.toLocaleString();
@@ -498,6 +514,21 @@
             color: #a855f7;
             margin-bottom: 5px;
             text-shadow: 0 0 5px #a855f7;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alt-badge {
+            background: linear-gradient(45deg, #ff6b6b, #ff5252);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
         }
 
         .member-class {
